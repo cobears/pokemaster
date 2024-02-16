@@ -1,17 +1,5 @@
 from pokemaster.utils.api import PokeBaseApi
 
-class Pokemon:
-    def __init__(self, name: str):
-        """
-        :name: str to extract pokemon information from api
-        """
-        pokemon = PokeBaseApi.get_pokemon(name)
-
-        self.name = pokemon.name
-        self.pokedex = int(pokemon.id_)
-        self.type = [str(x.type) for x in pokemon.types]
-
-
 class Type:
     def __init__(self, name: str) -> None:
         """_summary_
