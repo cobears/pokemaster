@@ -1,5 +1,15 @@
 # Pokemaster
 
+## First 'Mini' Game
+
+- Command line type effectiveness
+- Query the API for 2 types - designate 1 as the Defensive type - designate 1 as the Attack type - User will input 1, 2, 3, or 4 for type effectivenesss of Attacker vs Defender
+  1. 0x effective
+  2. 0.5x effective
+  3. 1x effective
+  4. 2x effective
+     \*\*Note: this is only considering single type combinations
+
 ## Games
 
 1. **Type Effectiveness Game**
