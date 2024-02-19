@@ -1,0 +1,5 @@
+# scoring file for the type game
+double_damage_to: 2
+half_damage_to: 0.5
+no_damage_to: 0
+single_damage_to: 1

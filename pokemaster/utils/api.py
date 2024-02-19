@@ -35,7 +35,7 @@ class PokeBaseApi:
     
     @staticmethod
     def get_all_types():
-        return pb.type_("name").results
+        return [str(pokemon_type) for pokemon_type in pb.type_("all").results]
         
 
         
