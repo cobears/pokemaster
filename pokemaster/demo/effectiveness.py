@@ -1,4 +1,4 @@
-from pokemaster.game.game import  TypeGame
+from pokemaster.game import  TypeGame
 
 if __name__ == "__main__":
     game = TypeGame()
