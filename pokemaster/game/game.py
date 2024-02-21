@@ -51,8 +51,7 @@ class TypeGame(Game):
         with open(os.path.join(os.path.dirname(__file__), "./scoring/type.yaml"), "r") as f:
             self.scoring = yaml.safe_load(f)
 
-        print(20*"-"+"\nWelcome to the Type Effectiveness Game!\n"+20*"-")
-        print("")
+        print(20*"-"+"\nWelcome to the Type Effectiveness Game!\n"+20*"-"+"\n")
 
     def play(self):
         for _ in range(self.rounds):
@@ -76,20 +75,20 @@ class TypeGame(Game):
                 assert ans in [0, 0.5, 1, 2]
             except:
                 print("\nAnswer must be 0, 0.5, 1, or 2 - Please try again...")
-                ans = input()
+                ans = input("New Answer: ")
 
         self.result(ans, attacker, defender)
         print(f"Score after Round {self.current_round}: {self.score}")
 
         # delete the game we just played
-        del self.games[0]
+        self.games.remove(game)
 
     def result(self, ans: float, attacker: Type, defender: Type) -> None:
         """result determines if the answer provided by the user is correct and updates
         the score
 
         Args:
-            ans (float): answer of effectiveness score by user
+            ans (float): answer of effectiveness score by user1
             attacker (Type): Type object for the attacker
             defender (Type): Type object for the defender
         """
@@ -99,7 +98,7 @@ class TypeGame(Game):
             print(f"Correct! Effectiveness is {self.scoring[solution]}x!")
             self.score += 10
         else:
-            print(f"Incorrect! Effectiveness is {self.scoring[solution]}x!")
+            print(f"Incorrect! Effectiveness is {self.scoring[solution]}x! Dumbass.")
 
 
 
