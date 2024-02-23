@@ -12,3 +12,38 @@ htmlcov/
 dist/
 build/
 *.egg-info/
+
+# dependencies
+/client/node_modules
+/client/.pnp
+/client.pnp.js
+/client.yarn/install-state.gz
+
+# testing
+/client/coverage
+
+# next.js
+/client/.next/
+/client/out/
+
+# production
+/client/build
+
+# misc
+/client.DS_Store
+/client*.pem
+
+# debug
+/clientnpm-debug.log*
+/clientyarn-debug.log*
+/clientyarn-error.log*
+
+# local env files
+/client.env*.local
+
+# vercel
+/client.vercel
+
+# typescript
+/client*.tsbuildinfo
+/clientnext-env.d.ts
