@@ -8,6 +8,7 @@ from pokemaster.utils.api import PokeBaseApi
 from pokemaster.type import Type
 from pokemaster.game import Game
 
+
 class TypeGame(Game):
     def __init__(self, **kwargs):
         super().__init__()
@@ -23,10 +24,14 @@ class TypeGame(Game):
         self.rounds: int = len(self.games)
         self.current_round: int = 1
         self.score = 0
-        with open(os.path.join(os.path.dirname(__file__), "./scoring/type.yaml"), "r") as f:
+        with open(
+            os.path.join(os.path.dirname(__file__), "./scoring/type.yaml"), "r"
+        ) as f:
             self.scoring = yaml.safe_load(f)
 
-        print(20*"-"+"\nWelcome to the Type Effectiveness Game!\n"+20*"-"+"\n")
+        print(
+            20 * "-" + "\nWelcome to the Type Effectiveness Game!\n" + 20 * "-" + "\n"
+        )
 
     def play(self):
         for _ in range(self.rounds):
@@ -37,8 +42,8 @@ class TypeGame(Game):
         # use the first index to create a game, where a game is a tuple of (attacker, defender)
         game, *_ = self.games
         attacker, defender = game
-        
-        print(20*"-"+f"\nRound {self.current_round}\n"+20*"-")
+
+        print(20 * "-" + f"\nRound {self.current_round}\n" + 20 * "-")
         print(f"Attacker: {attacker.name}")
         print(f"Defender: {defender.name}")
         print("\nWhat is the effectivness to this match-up?")
@@ -67,8 +72,12 @@ class TypeGame(Game):
             attacker (Type): Type object for the attacker
             defender (Type): Type object for the defender
         """
-        solution, *_ = [key for key in self.scoring.keys() if defender.name in attacker.damage_relations[key]]
-        
+        solution, *_ = [
+            key
+            for key in self.scoring.keys()
+            if defender.name in attacker.damage_relations[key]
+        ]
+
         if ans == self.scoring[solution]:
             print(f"Correct! Effectiveness is {self.scoring[solution]}x!")
             self.score += 10

@@ -1,5 +1,6 @@
 from pokemaster.utils.api import PokeBaseApi
 
+
 class Pokemon:
     def __init__(self, name: str):
         """
