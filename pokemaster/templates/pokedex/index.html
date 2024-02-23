@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %} {% endblock %}</h1>
+
+{% endblock %}
+
+{% block content %}
+    <h1>{{ pokemon.name }} </h1>
+    <h1>{{ pokemon.id }} </h1>
+    <h1>{{ pokemon.types[0] }} </h1>
+    {% if pokemon.types[1] %}
+    <h1> {{ pokemon.types[1]}} </h1>
+    {% else %}
+    <h1>There is no second type BITCH</h1>
+    {% endif %}
+{% endblock %}
